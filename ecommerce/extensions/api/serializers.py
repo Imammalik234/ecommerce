@@ -330,10 +330,10 @@ class EntitlementProductHelper(object):
     def validate(product):
         attrs = _flatten(product['attribute_values'])
 
-        if not attrs.get('certificate_type'):
+        if 'certificate_type' not in attrs:
             raise serializers.ValidationError(_(u"Products must have a certificate type."))
 
-        if product.get('price') is None:
+        if 'price' not in product:
             raise serializers.ValidationError(_(u"Products must have a price."))
 
     @staticmethod

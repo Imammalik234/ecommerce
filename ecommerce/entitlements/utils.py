@@ -66,7 +66,7 @@ def create_or_update_course_entitlement(certificate_type, price, partner, UUID, 
 
     course_entitlement.structure = Product.CHILD
     course_entitlement.is_discountable = True
-    course_entitlement.title = 'Course Entitlement for {}'.format(name)
+    course_entitlement.title = 'Course {}'.format(name)
     course_entitlement.attr.certificate_type = certificate_type
     course_entitlement.attr.UUID = UUID
     course_entitlement.parent = parent_entitlement

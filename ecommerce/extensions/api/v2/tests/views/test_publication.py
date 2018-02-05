@@ -243,7 +243,7 @@ class AtomicPublicationTests(DiscoveryTestMixin, TestCase):
         self.assertIsNotNone(certificate_type)
 
         # If the seat does not exist, an error will be raised.
-        entitlement = Product.objects.get(title='Course Entitlement for {}'.format(course.name))
+        entitlement = Product.objects.get(title='Course {}'.format(course.name))
 
         self.assertEqual(entitlement.structure, Product.CHILD)
         self.assertEqual(entitlement.parent.product_class.name, COURSE_ENTITLEMENT_PRODUCT_CLASS_NAME)
